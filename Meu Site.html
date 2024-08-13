@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://output.jsbin.com/xibometexa -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="[add your bin description]">
+    
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2024 by anonymous (http://jsbin.com/xibometexa/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="./Meu Site_files/styles.css">
+
+<style id="jsbin-css">
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #bdbdbd;
+    height: 100%; /* Garante que o body e o html ocupem toda a altura da tela */
+}
+
+header {
+    background-color: #2c7d7b;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Garante que o header fique sobre outros elementos */
+    box-sizing: border-box; 
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+header nav a {
+    color: #ffffff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s;
+  
+  }
+
+header nav a:hover::after {
+    width: 100%;
+  
+}
+
+.hero {
+    background-image: url('https://i.gifer.com/9LIY.gif');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    height: 100vh; /* Ajusta a altura da seção para preencher a tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#saibaMais {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+#saibaMais:hover {
+    background-color: white;
+    color: #2c7d7b;
+}
+
+#inscrever {
+    background-color: white;
+    color: #2c7d7b;
+}
+
+#inscrever:hover {
+    background-color: #2c7d7b;
+    color: white;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Escurece o fundo */
+    transition: opacity 0.3s ease;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+/* Modal Header */
+.modal-content h2 {
+    margin-top: 0;
+    color: #2c7d7b;
+    font-size: 24px;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 15px;
+    background-color: #2c7d7b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #246462;
+}
+
+
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>IZISVFREITAS</h1>
+        <nav>
+            <a href="https://output.jsbin.com/xibometexa#">Home</a>
+            <a href="https://output.jsbin.com/xibometexa#">Contato</a>
+            <a href="https://output.jsbin.com/xibometexa#">Saiba</a>
+            <a href="https://output.jsbin.com/xibometexa#">Mais</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2> Inscreva-se se você acha que está num <br> curso de jornalismo por acidente </h2>
+        <div class="buttons">
+            <button id="saibaMais">Saiba Mais</button>
+            <button id="inscrever">Inscrever-se</button>
+        </div>
+    </section>
+
+  
+   <!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">×</span>
+        <h2>Inscreva-se</h2>
+        <form>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required="">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required="">
+            
+            <label for="interest">Interesse:</label>
+            <input type="text" id="interest" name="interest" required="">
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+
+
+    <script type="text/javascript" async="" src="./Meu Site_files/js"></script><script type="text/javascript" async="" src="./Meu Site_files/linkid.js.download"></script><script async="" src="./Meu Site_files/analytics.js.download"></script><script src="./Meu Site_files/script.js.download"></script>
+<script>
+var modal = document.getElementById('modal');
+var closeButton = document.getElementsByClassName('close')[0];
+
+function openModal() {
+    modal.style.display = 'block';
+    modal.querySelector('.modal-content').style.opacity = '1';
+    modal.querySelector('.modal-content').style.transform = 'translateY(0)';
+}
+
+closeButton.onclick = function() {
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+}
+
+document.getElementById('inscrever').onclick = openModal;
+</script>
+<script src="./Meu Site_files/edit.js.download"></script>
+<script>jsbinShowEdit && jsbinShowEdit({"static":"https://static.jsbin.com","root":"https://jsbin.com"});</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1656750-34', 'auto');
+ga('require', 'linkid', 'linkid.js');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+
+</script>
+
+
+
+
+<iframe src="./Meu Site_files/statistic.html" width="1" height="1" scrolling="no" frameborder="0"></iframe></body><a id="edit-with-js-bin" href="https://jsbin.com/xibometexa/edit" style="top: 0px;">Edit in JS Bin <img src="./Meu Site_files/favicon.png" width="16" height="16"></a><link rel="stylesheet" href="./Meu Site_files/edit.css"></html>
